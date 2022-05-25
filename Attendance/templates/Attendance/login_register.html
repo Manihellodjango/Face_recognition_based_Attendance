@@ -2,35 +2,74 @@
 {% load static %}
 {% block content %}
 
-<div class="container">
-    <div class="login--wrapper">
 
-        {% if page == 'login' %}
-        <form method='post' class="form">
-            {% csrf_token %}
-            <h1>Login to Take Attendance</h1>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Username</label>
-                <input type="text" class="form-control" name="username" id="exampleInputEmail1"
-                    aria-describedby="emailHelp">
+
+<div class="container my-20 mx-32 w-10/12 shadow-2xl rounded-xl bg-white">
+    <div class="login--wrapper">
+        <div class="row">
+            <div class="col-lg-5">
+                <img src="/static/img/school.svg" alt="school image" class="img-fluid h-hlogin">
             </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+            {% if page == 'login' %}
+            <div class="col-lg-7 my-32">
+                <form method='post' class="form h-full">
+                    {% csrf_token %}
+                    <div class="w-fit mx-32 mb-8">
+                        <div class="rounded-full border-2">
+                            <lord-icon src="https://cdn.lordicon.com/dxjqoygy.json" trigger="loop" delay="5"
+                                colors="primary:#3080e8,secondary:#08a88a" stroke="35" state="morph-group"
+                                style="width:80px;height:80px">
+                            </lord-icon>
+                        </div>
+                        <div>
+                            <h4 class="font-mono text-lg text-center">Login</h4>
+                        </div>
+
+                    </div>
+                    <div class="form-row mb-4">
+                        <div class="ml-16">
+                            <label for="exampleInputEmail1"
+                                class="form-label mb-2 font-mono text-md text-center">Username</label>
+                            <input type="text" class="form-control w-72" name="username" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="email-address">
+                        </div>
+                    </div>
+                    <div class="form-row mb-4">
+                        <div class="ml-16">
+                            <label for="exampleInputPassword1"
+                                class="form-label form-label mb-2 font-mono text-md text-center">Password</label>
+                            <input type="password" class="form-control w-72" name="password" id="exampleInputPassword1"
+                                placeholder="password">
+                        </div>
+                    </div>
+                    <div class="form-row mb-4">
+                        <div class="ml-32 mb-4">
+                            <button type="submit"
+                                class="btn bg-blue-500 w-32 hover:bg-white hover:border-2 border-sky-400">Login</button>
+                        </div>
+                    </div>
+                    <div class="form-row mb-4 ml-16">
+                        <p>Don't have an account ? <a class="text-blue-500 underline" href="{% url 'register' %}"
+                                role="button">Register Now</a>
+                        </p>
+                    </div>
+
+                </form>
+                {% else %}
+                <form method='post'>
+                    <h1>Register</h1>
+                    {% csrf_token %}
+                    {{form.as_table}}
+                    <input type="submit" value="Register">
+                    <p>Already have an account <a class="btn btn-danger" href="{% url 'login' %}"
+                            role="button">Login</a>
+                    </p>
+                </form>
+                {% endif %}
+
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
-            <p>Don't have an account <a class="btn btn-warning" href="{% url 'register' %}" role="button">Register</a>
-            </p>
-        </form>
-        {% else %}
-        <form method='post'>
-            <h1>Register</h1>
-            {% csrf_token %}
-            {{form.as_table}}
-            <input type="submit" value="Register">
-            <p>Already have an account <a class="btn btn-danger" href="{% url 'login' %}" role="button">Login</a></p>
-        </form>
-        {% endif %}
+
+        </div>
     </div>
 </div>
 
