@@ -22,18 +22,19 @@
             </div>
         </div>
     </nav>
-    <div class="fixed  left-0 h-screen w-20 m-0 flex flex-col bg-slate-700 text-white shadow-lg">
-        <span class="mx-2.5 mt-28 px-2.5 mb-4 bg-slate-500 hover:bg-slate-600 cursor-pointer rounded-full">
+    <div class="fixed  left-0 h-screen w-24 m-0 flex flex-col bg-slate-700 text-white shadow-lg">
+        <span class="mx-2.5 mt-28 px-3  bg-slate-500 hover:bg-slate-600 cursor-pointer rounded-full">
             <a target="_blank" class="scan" href="{% url 'details' %}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="currentColor" class="bi bi-plus-lg"
                     viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
                         d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+
                 </svg>
             </a>
-
         </span>
-        <span class="mx-3.5  px-3.5 py-2 mb-4 bg-slate-500 hover:bg-slate-600 cursor-pointer rounded-full">
+        <p class="text-xs mb-4">Take Attendance</p>
+        <span class="mx-3.5  px-3.5 py-2 bg-slate-500 hover:bg-slate-600 cursor-pointer rounded-full">
             <a href="{% url 'profiles' %}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search"
                     viewBox="0 0 16 16">
@@ -42,6 +43,7 @@
                 </svg>
             </a>
         </span>
+        <p class="text-xs mt-2 text-center">Serch Details</p>
     </div>
     <main>
         <div class="w-11/12 mx-0 py-6 sm:px-6 lg:px-8 mx-auto">
