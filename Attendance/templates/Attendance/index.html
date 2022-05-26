@@ -2,139 +2,183 @@
 {% load static %}
 {% block content %}
 
-<div class="container emp-profile">
+<!-- navbar -->
+<div class="min-h-full">
+    <nav class="bg-blue-200 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h2 class="font-sans text-xl font-bold bg-slate-700 text-white p-2 rounded-lg">Face Recognition
+                            App</h2>
+                    </div>
 
-    <div class="row">
-        <div class="col-md-3">
-            {% if request.user.is_authenticated %} 
-                  <p> Hello {{request.user}} Welcome to Attendance portal</p> 
-            {% endif %}  
-                
-            <img src="{% static 'img/fcicon.png'%}" alt="" width="50%">
-            <h6 class="text-muted p-1"> FR-CV2-Django</h6>
+                </div>
+                <div>
+                    <a href="{% url 'logout' %}"><button type="button"
+                            class="btn btn-dark btn-large active">Logout</button></a>
+                </div>
 
-        </div>
-        <div class="col-md-6">
-            <div class="profile-head">
             </div>
         </div>
-        <div class="col-md-3">
-            <a target="_blank" class="scan" href="{% url 'details' %}"><input type="submit" class="profile-edit-btn m-2"
-                    name="btnAddMore" value="Take Attendance" /></a>
-            <a   href="{% url 'profiles' %}"><input type="submit" class="profile-edit-btn m-2 "
-                        name="btnAddMore" value="Search Student Details" /></a>
-        </div>
+    </nav>
+    <div class="fixed  left-0 h-screen w-20 m-0 flex flex-col bg-slate-700 text-white shadow-lg">
+        <span class="mx-2.5 mt-28 px-2.5 mb-4 bg-slate-500 hover:bg-slate-600 cursor-pointer rounded-full">
+            <a target="_blank" class="scan" href="{% url 'details' %}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="currentColor" class="bi bi-plus-lg"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                </svg>
+            </a>
+
+        </span>
+        <span class="mx-3.5  px-3.5 py-2 mb-4 bg-slate-500 hover:bg-slate-600 cursor-pointer rounded-full">
+            <a href="{% url 'profiles' %}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg>
+            </a>
+        </span>
     </div>
-    <hr>
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <a class="nav-link active" id="present-tab" data-toggle="tab" href="#present" role="tab"
-                aria-controls="home" aria-selected="true">Present</a>
-        </li>
-        <li class="nav-item" role="presentation">
-            <a class="nav-link" id="absent-tab" data-toggle="tab" href="#absent" role="tab" aria-controls="profile"
-                aria-selected="false">Absent</a>
-        </li>
-        <li class="nav-item" role="presentation">
-            <a class="nav-link" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="contact"
-                aria-selected="false">History</a>
-        </li>
-    </ul>
+    <main>
+        <div class="w-11/12 mx-0 py-6 sm:px-6 lg:px-8 mx-auto">
+            <!-- Replace with your content -->
+            <div class="container emp-profile mx-12 ">
 
-    <div class="tab-content" id="myTabContent">
-        <br>
-        <div class="tab-pane fade show active" id="present" role="tabpanel" aria-labelledby="home-tab">
+                <div class="profile-details">
+                    <div class="flex flex-row justify-around items-center">
+                        <div class="col-md-5">
+                            {% if request.user.is_authenticated %}
+                            <p class="font-mono font-medium tracking-normal">Hello <strong>{{request.user}}</strong></p>
+                            <p class="font-mono font-medium tracking-normal"> Welcome to Attendance portal</p>
+                        </div>
+                        {% endif %}
+                        <div class="">
+                            <img src="{% static 'img/fcicon.png'%}" alt="" width="30%" class="float-right">
+                            <h6 class="text-muted p-1 float-right my-16"> FR-CV2-Django</h6>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="present-tab" data-toggle="tab" href="#present" role="tab"
+                            aria-controls="home" aria-selected="true">Present</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="absent-tab" data-toggle="tab" href="#absent" role="tab"
+                            aria-controls="profile" aria-selected="false">Absent</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="history-tab" data-toggle="tab" href="#history" role="tab"
+                            aria-controls="contact" aria-selected="false">History</a>
+                    </li>
+                </ul>
 
-            <table class="table table-striped ">
-                <thead>
-                    <tr>
-                        <th scope="col"> </th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Branch</th>
-                        <th scope="col">Year</th>
-                        <th scope="col">Section</th>
-                        <th scope="col">Roll Number</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Attendance Taken Time</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for profile in present %}
-                    <tr>
-                        <th scope="row">-</th>
-                        <td>{{profile.first_name}} {{profile.last_name}}</td>
-                        <td>{{profile.Branch}}</td>
-                        <td>{{profile.Year}}</td>
-                        <td>{{profile.Section}}</td>
-                        <td>{{profile.Roll_Number}}</td>
-                        <td>{{profile.updated |date}}</td>
-                        <td>{{profile.updated |date:"h:iA"}}</td>
-                    </tr>
-                    {% endfor%}
-                </tbody>
-            </table>
-            <a href="{% url 'reset' %}"><button type="button" class="btn btn-outline-secondary">Reset</button></a>
-            <a href="{% url 'index' %}"><button type="button" class="btn btn-outline-primary">Refresh</button></a>
-            <a href="{% url 'logout' %}"><button type="button" class="btn btn-dark btn-large active">Logout</button></a>
-            
+                <div class="tab-content" id="myTabContent">
+                    <br>
+                    <div class="tab-pane fade show active" id="present" role="tabpanel" aria-labelledby="home-tab">
 
+                        <table class="table table-striped ">
+                            <thead>
+                                <tr>
+                                    <th scope="col"> </th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Branch</th>
+                                    <th scope="col">Year</th>
+                                    <th scope="col">Section</th>
+                                    <th scope="col">Roll Number</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Attendance Taken Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for profile in present %}
+                                <tr>
+                                    <th scope="row">-</th>
+                                    <td>{{profile.first_name}} {{profile.last_name}}</td>
+                                    <td>{{profile.Branch}}</td>
+                                    <td>{{profile.Year}}</td>
+                                    <td>{{profile.Section}}</td>
+                                    <td>{{profile.Roll_Number}}</td>
+                                    <td>{{profile.updated |date}}</td>
+                                    <td>{{profile.updated |date:"h:iA"}}</td>
+                                </tr>
+                                {% endfor%}
+                            </tbody>
+                        </table>
+                        <a href="{% url 'reset' %}"><button type="button"
+                                class="btn btn-outline-secondary">Reset</button></a>
+                        <a href="{% url 'index' %}"><button type="button"
+                                class="btn btn-outline-primary">Refresh</button></a>
+                    </div>
+
+                    <div class="tab-pane fade" id="absent" role="tabpanel" aria-labelledby="profile-tab">
+                        <table class="table table-striped ">
+                            <thead>
+                                <tr>
+                                    <th scope="col"> </th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Branch</th>
+                                    <th scope="col">Year</th>
+                                    <th scope="col">Section</th>
+                                    <th scope="col">Roll Number</th>
+                                    <th scope="col">Class Start Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for profile in absent %}
+                                <tr>
+                                    <th scope="row">-</th>
+                                    <td>{{profile.first_name}} {{profile.last_name}}</td>
+                                    <td>{{profile.Branch}}</td>
+                                    <td>{{profile.Year}}</td>
+                                    <td>{{profile.Section}}</td>
+                                    <td>{{profile.Roll_Number}}</td>
+                                    <td>{{profile.shift}}</td>
+                                </tr>
+                                {% endfor%}
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="contact-tab">
+                        <table class="table table-striped ">
+                            <thead>
+                                <tr>
+                                    <th scope="col"> </th>
+                                    <th scope="col">Profile ID</th>
+                                    <th scope="col">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for face in scanned %}
+                                <tr>
+                                    <th scope="row">-</th>
+                                    <td>{{face.last_face}}</td>
+                                    <td>{{face.date}}</td>
+
+                                </tr>
+                                {% endfor%}
+                            </tbody>
+                        </table>
+                        <a href="{% url 'clear_history' %}"><button type="button"
+                                class="btn btn-outline-secondary">Clear
+                                History</button></a>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /End replace -->
         </div>
-
-        <div class="tab-pane fade" id="absent" role="tabpanel" aria-labelledby="profile-tab">
-            <table class="table table-striped ">
-                <thead>
-                    <tr>
-                        <th scope="col"> </th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Branch</th>
-                        <th scope="col">Year</th>
-                        <th scope="col">Section</th>
-                        <th scope="col">Roll Number</th>
-                        <th scope="col">Class Start Time</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for profile in absent %}
-                    <tr>
-                        <th scope="row">-</th>
-                        <td>{{profile.first_name}} {{profile.last_name}}</td>
-                        <td>{{profile.Branch}}</td>
-                        <td>{{profile.Year}}</td>
-                        <td>{{profile.Section}}</td>
-                        <td>{{profile.Roll_Number}}</td>
-                        <td>{{profile.shift}}</td>
-                    </tr>
-                    {% endfor%}
-                </tbody>
-            </table>
-
-        </div>
-
-        <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="contact-tab">
-            <table class="table table-striped ">
-                <thead>
-                    <tr>
-                        <th scope="col"> </th>
-                        <th scope="col">Profile ID</th>
-                        <th scope="col">Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for face in scanned %}
-                    <tr>
-                        <th scope="row">-</th>
-                        <td>{{face.last_face}}</td>
-                        <td>{{face.date}}</td>
-                        
-                    </tr>
-                    {% endfor%}
-                </tbody>
-            </table>
-            <a href="{% url 'clear_history' %}"><button type="button" class="btn btn-outline-secondary">Clear History</button></a>
-        </div>
-    </div>
-
+    </main>
 </div>
+
+
 <script>
     $(".scan").click(function () {
         var postData = { csrfmiddlewaretoken: '{{ csrf_token }}' }
