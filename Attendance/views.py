@@ -4,6 +4,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .models import *
 from .forms import *
+import winsound
+from playsound import playsound
 import face_recognition
 import cv2
 import numpy as np
@@ -130,6 +132,7 @@ def scan(request):
                         last_face = LastFace(last_face=name)
                         last_face.save()
                         last_face = name
+                        winsound.PlaySound(sound, winsound.SND_ASYNC)
                     else:
                         pass
 
