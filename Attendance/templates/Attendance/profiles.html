@@ -4,11 +4,11 @@
 
 <div class="container emp-profile">
 
+<!-- This is the code for list of all student deatils stored in the database -->
     <div class="row">
         <div class="col-md-3">
             <img src="{% static 'img/fcicon.png'%}" alt="" width="50%">
             <h6 class="text-muted p-1"> FR-CV2-Django</h6>
-
         </div>
         <div class="col-md-6">
             <div class="profile-head">
@@ -22,7 +22,6 @@
         </div>
     </div>
     <hr>
-
     <div class="tab-content" id="myTabContent">
         <br>
         <table class="table table-striped ">
@@ -32,11 +31,6 @@
                     <th scope="col">RollNumber</th>
                     <th scope="col">Branch</th>
                     <th scope="col">Year</th>
-                    <th scope="col"> </th>
-
-                    <th scope="col"> </th>
-
-
                 </tr>
             </thead>
             <tbody>
@@ -46,8 +40,6 @@
                     <td>{{profile.Roll_Number}}</td>
                     <td>{{profile.Branch}}</td>
                     <td>0{{profile.Year}}</td>
-                    <td></td>
-
                     <td>
                         <div class="btn-group btn-group-toggle">
                             <a href="{% url 'edit_profile' profile.id %}">
@@ -76,8 +68,6 @@
                             </a>
                         </div>
                     </td>
-
-
                 </tr>
                 {% endfor%}
             </tbody>

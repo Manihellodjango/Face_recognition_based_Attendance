@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 
-<!-- navbar -->
+<!-- navbars for side and upper in main page after login -->
 <div class="min-h-full">
     <nav class="bg-blue-200 z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,6 +14,7 @@
                     </div>
 
                 </div>
+                <!-- This is the code for Logout button-->
                 <div>
                     <a href="{% url 'logout' %}"><button type="button"
                             class="btn btn-dark btn-large active">Logout</button></a>
@@ -33,6 +34,7 @@
                 </svg>
             </a>
         </span>
+        <!-- This is the code for side navbars to Take Attendance and search details-->
         <p class="text-xs mb-4">Take Attendance</p>
         <span class="mx-3.5  px-3.5 py-2 bg-slate-500 hover:bg-slate-600 cursor-pointer rounded-full">
             <a href="{% url 'profiles' %}">
@@ -49,7 +51,7 @@
         <div class="w-11/12 mx-0 py-6 sm:px-6 lg:px-8 mx-auto">
             <!-- Replace with your content -->
             <div class="container emp-profile mx-12 ">
-
+            <!-- This is the code for display of username in the main page-->
                 <div class="profile-details">
                     <div class="flex flex-row justify-around items-center">
                         <div class="col-md-5">
@@ -65,6 +67,7 @@
                     </div>
                 </div>
                 <hr>
+                <!-- This is the code for present, Absent and history Navbars-->
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <a class="nav-link active" id="present-tab" data-toggle="tab" href="#present" role="tab"
@@ -79,7 +82,7 @@
                             aria-controls="contact" aria-selected="false">History</a>
                     </li>
                 </ul>
-
+                <!-- This is the code for present data-->
                 <div class="tab-content" id="myTabContent">
                     <br>
                     <div class="tab-pane fade show active" id="present" role="tabpanel" aria-labelledby="home-tab">
@@ -117,7 +120,7 @@
                         <a href="{% url 'index' %}"><button type="button"
                                 class="btn btn-outline-primary">Refresh</button></a>
                     </div>
-
+                    <!-- This is the code for Absent data-->
                     <div class="tab-pane fade" id="absent" role="tabpanel" aria-labelledby="profile-tab">
                         <table class="table table-striped ">
                             <thead>
@@ -147,7 +150,7 @@
                         </table>
 
                     </div>
-
+                    <!-- This is the code for History data-->
                     <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="contact-tab">
                         <table class="table table-striped ">
                             <thead>

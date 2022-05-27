@@ -9,18 +9,17 @@
             <div class="col-md-4">
                 <h5 class="text-muted">Personal Information:</h5><br>
 
+             <!-- This is the code for Add student details page-->
                 <div class="d-flex justify-content-between">
                     <div class="m-1 mr-2">
                         <label class="text-muted"><small>First Name:</small></label>
                         {{ form.first_name }}
                     </div>
-
                     <div class="m-1">
                         <label class="text-muted"><small>Last Name:</small></label>
                         {{ form.last_name }}
                     </div>
                 </div>
-
                 <div class="ml-1">
                     <label class="text-muted"><small>Phone Number:</small></label>
                     {{ form.phone }}
@@ -34,8 +33,6 @@
                     {{ form.date }}
                 </div>
             </div>
-
-
             <div class="col-md-4">
                 <h5 class="text-muted">Student Details:</h5><br>
                 <div class="m-1">
@@ -64,7 +61,7 @@
                 </div>
                 
             </div>
-
+           <!-- This is the Biometric-image code in student details page-->
             <div class="col-md-4">
                 <h5 class="text-muted">Biometric Photo:</h5><br>
                 <div>
@@ -84,7 +81,7 @@
                     {{ form.image }}
                 </div>
             </div>
-
+          <!-- This is the code for save and cancel buttons in student details page-->
         </div>
         <div class="mt-3">
             <button type="submit" class="btn btn-outline-success m-1">Save</button>
