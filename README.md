@@ -7,7 +7,7 @@ Face_recognition_based_Attendance is an web-application developed for daily stud
 This System uses facial recognition technology to record the attendance through a high resolution digital camera/webcam that detects and recognizes faces and compare the recognize faces with students/known faces images stored in database.
 
 
-# Installed Packages in this software
+# Installed Packages in this project
 1)pip install Django 
 2)pip install cmake
 3)pip install dlib
