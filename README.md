@@ -2,8 +2,8 @@
 Face recognition based Attendance system Web-Application.
 
 # Technologies used
-1)python with Django framework
-2)HTML
+1)python with Django framework<br/>
+2)HTML<br/>
 3)CSS
 
 # Details 
@@ -14,13 +14,13 @@ This System uses facial recognition technology to record the attendance through 
 
 # Installed Packages in this project
 Befor starting of the project install these softwares  in your system
-1)First Install python in your system and then install below packages  
-2)pip install django 
-3)pip install cmake
-4)pip install dlib
-5)pip install face-recognition 
-6)pip install playsound 
-7)pip install numpy
+1)First Install python in your system and then install below packages <br/> 
+2)pip install django <br/>
+3)pip install cmake<br/>
+4)pip install dlib<br/>
+5)pip install face-recognition <br/>
+6)pip install playsound <br/>
+7)pip install numpy<br/>
 8)pip install opencv-python
 
 
